@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>QuestionPro Intercept — Screens</title>
+<style>
+  :root {
+    --ink: #1B3380;
+    --muted: #6B768C;
+    --line: #E2E6EC;
+    --blue: #1B87E6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #50535b; }
+  body { font-family: "Fira Sans", system-ui, -apple-system, sans-serif; color: #1a1d24; }
+
+  .page {
+    position: relative;
+    width: 1440px;
+    background: #fff;
+    margin: 22px auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    overflow: hidden;
+  }
+  /* screen pages keep the 1440x900 capture ratio + a caption strip */
+  .screen { padding: 0; }
+  .screen img { display: block; width: 100%; height: auto; }
+  .cap {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 18px 30px;
+    border-top: 1px solid var(--line);
+    background: #fff;
+  }
+  .cap .n {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700; color: var(--blue); font-size: 18px;
+    letter-spacing: .02em;
+  }
+  .cap .t { font-weight: 600; font-size: 19px; color: var(--ink); }
+  .cap .d { margin-left: auto; font-size: 14px; color: var(--muted); }
+
+  /* ---------- cover ---------- */
+  .cover {
+    height: 900px;
+    background: linear-gradient(160deg, #1B3380 0%, #1B87E6 100%);
+    color: #fff;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 110px;
+  }
+  .cover .mark {
+    width: 64px; height: 64px; border-radius: 16px; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 30px; color: var(--blue);
+    margin-bottom: 38px;
+  }
+  .cover h1 { font-size: 76px; line-height: 1.02; font-weight: 700; letter-spacing: -0.02em; }
+  .cover .sub { margin-top: 22px; font-size: 26px; font-weight: 400; opacity: .9; max-width: 760px; line-height: 1.4; }
+  .cover .meta {
+    margin-top: 56px; display: flex; gap: 46px;
+    border-top: 1px solid rgba(255,255,255,.25); padding-top: 30px;
+  }
+  .cover .meta div span { display: block; }
+  .cover .meta .k { font-size: 13px; text-transform: uppercase; letter-spacing: .14em; opacity: .7; margin-bottom: 6px; }
+  .cover .meta .v { font-size: 20px; font-weight: 500; }
+  .cover .toc { margin-top: 46px; columns: 2; column-gap: 64px; max-width: 820px; }
+  .cover .toc div { font-size: 17px; padding: 7px 0; opacity: .92; break-inside: avoid; }
+  .cover .toc .num { display: inline-block; width: 30px; font-weight: 700; opacity: .7; }
+
+  /* ---------- print ---------- */
+  @media print {
+    @page { size: 1440px 900px; margin: 0; }
+    html, body { background: #fff; }
+    .page {
+      width: 1440px; height: 900px; margin: 0;
+      box-shadow: none;
+      break-after: page; page-break-after: always;
+      display: flex; flex-direction: column;
+    }
+    .page:last-child { break-after: auto; page-break-after: auto; }
+    .screen { justify-content: space-between; }
+    .screen img { width: 1440px; height: auto; }
+    .cover { height: 900px; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="page cover">
+    <div class="mark">P</div>
+    <h1>Intercept<br/>Builder</h1>
+    <p class="sub">Respondent experience — intercept creation, design, targeting rules, and behavior settings.</p>
+    <div class="meta">
+      <div><span class="k">Product</span><span class="v">QuestionPro Intercept</span></div>
+      <div><span class="k">Surface</span><span class="v">Web app prototype</span></div>
+      <div><span class="k">Screens</span><span class="v">9</span></div>
+    </div>
+    <div class="toc">
+      <div><span class="num">01</span>Workspaces</div>
+      <div><span class="num">02</span>Projects</div>
+      <div><span class="num">03</span>Intercepts</div>
+      <div><span class="num">04</span>Builder</div>
+      <div><span class="num">05</span>Design — Themes</div>
+      <div><span class="num">06</span>Design — Customize</div>
+      <div><span class="num">07</span>Design — Widget</div>
+      <div><span class="num">08</span>Rules</div>
+      <div><span class="num">09</span>Settings</div>
+    </div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/01-shot.png" alt="Workspaces"/>
+    <div class="cap"><span class="n">01</span><span class="t">Workspaces</span><span class="d">List of workspaces</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/02-shot.png" alt="Projects"/>
+    <div class="cap"><span class="n">02</span><span class="t">Projects</span><span class="d">Projects within a workspace</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/03-shot.png" alt="Intercepts"/>
+    <div class="cap"><span class="n">03</span><span class="t">Intercepts</span><span class="d">Intercepts in a project</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/04-shot.png" alt="Builder"/>
+    <div class="cap"><span class="n">04</span><span class="t">Builder</span><span class="d">Survey question editor</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/05-shot.png" alt="Design — Themes"/>
+    <div class="cap"><span class="n">05</span><span class="t">Design — Themes</span><span class="d">Theme presets &amp; live preview</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/06-shot.png" alt="Design — Customize"/>
+    <div class="cap"><span class="n">06</span><span class="t">Design — Customize</span><span class="d">Colors &amp; typography</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/07-shot.png" alt="Design — Widget"/>
+    <div class="cap"><span class="n">07</span><span class="t">Design — Widget</span><span class="d">Widget display settings</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/08-shot.png" alt="Rules"/>
+    <div class="cap"><span class="n">08</span><span class="t">Rules</span><span class="d">Trigger, frequency &amp; targeting</span></div>
+  </section>
+
+  <section class="page screen">
+    <img src="screens/pdf/09-shot.png" alt="Settings"/>
+    <div class="cap"><span class="n">09</span><span class="t">Settings</span><span class="d">Intercept behavior options</span></div>
+  </section>
+
+  <script>
+    (function () {
+      function ready() {
+        var imgs = Array.prototype.slice.call(document.images);
+        return Promise.all(imgs.map(function (img) {
+          if (img.complete) return Promise.resolve();
+          return new Promise(function (res) { img.onload = img.onerror = res; });
+        }));
+      }
+      var fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+      Promise.all([ready(), fonts]).then(function () {
+        setTimeout(function () { window.print(); }, 500);
+      });
+    })();
+  </script>
+</body>
+</html>
